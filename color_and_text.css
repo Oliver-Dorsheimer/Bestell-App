@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --color-primary: rgba(231, 108, 31, 1);
+    --color-primary-tint: rgba(253, 234, 220, 1);
+    --color-secondary: rgba(54, 53, 52, 1);
+
+    --color-primary-text: rgba(255, 255, 255, 1);
+    --color-secondary-text: rgba(54, 53, 52, 1);
+    --color-tertiary-text: rgba(114, 109, 109, 1);
+}
+
+body {
+    font-family: "palanquin";
+    color: var(--color-secondary-text);
+}
+
+@font-face{
+    font-family: "palanquin";
+    src: url(assets/fonts/Palanquin/Palanquin-Regular.ttf);
+}
+
+@font-face{
+    font-family: "Palenquin Dark";
+    src: url(assets/fonts/Palanquin/PalanquinDark-Regular.ttf);
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.title_undertext{
+    font-size: 24px;
+    font-weight: 700;
+}
+
+h2 {
+    color: var(--color-primary-text);
+    font-size: 40px;
+    font-weight: 700;
+}
