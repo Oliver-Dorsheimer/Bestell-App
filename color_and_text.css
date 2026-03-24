@@ -43,3 +43,9 @@ h2 {
     font-size: 40px;
     font-weight: 700;
 }
+
+h3 {
+    color: var(--color-secondary-text);
+    font-size: 24px;
+    font-weight: 600;
+}

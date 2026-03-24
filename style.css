@@ -114,8 +114,21 @@ header {
 
 /*C_main*/
 
+main {
+    display: flex;
+}
+
+.main_content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu_info{
+    display: flex;
+    flex-direction: column;
+}
+
 .category_header{
-    position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: last baseline;
@@ -143,6 +156,82 @@ header {
     padding-top: 10px;
 }
 
+.section_menu{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.dish_container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 1920px;
+}
+
+.dish_card{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 32px;
+    width: 700px;
+    background-color: var(--color-primary-tint);
+    padding: 12px;
+    border-radius: 12px;
+}
+
+.dish_img{
+    height: 128px;
+    width: 192px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.dish_info{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 16px;
+
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.dish_price_and_order{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.dish_order_button{
+    font-family: "palanquin";
+    font-weight: 600;
+    height: 20px;
+    width: 100px;
+
+    border-radius: 8px;
+    border-style: none;
+}
+
+.dish_order_button:hover{
+    color: var(--color-primary);
+}
+
+.category_content{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#order_basket{
+    height: 800px;
+    width: 400px;
+
+    background-color: var(--color-secondary);
+}
+
 /*C_footer*/
 
 footer {
@@ -151,6 +240,7 @@ footer {
     align-items: flex-end;
     height: 128px;
     background-color: var(--color-primary);
+    margin-top: 128px;
 }
 
 .footer_content{
@@ -163,6 +253,7 @@ footer {
 .footer_text{
     display: flex;
     justify-content: center;
+    flex: 1;
 
     font-family: "palanquin";
     color: var(--color-primary-text);
