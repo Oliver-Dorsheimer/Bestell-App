@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="color_and_text.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/basket.css">
     <script defer src = "script.js"></script>
     <script defer src = "scripts/template.js"></script>
     <script defer src = "scripts/data.js"></script>
@@ -34,52 +35,63 @@
             <p class = "title_undertext">The best of Burgers, Pizza, and Greens, all in one great place.</p>
     </section>
     <main>
-        <section class = "main_content content_limitation">
-            <section class = "section_menu">
-                <section>
-                        <div class = "category_header">
-                            <div class = "category_container outer_distance content_limitation">
-                                <img class = "category_icon" src="assets/icon/burger_icon.png" alt="icon of a burger">
-                                <h2 class = "category_title">Burger & Sandwiches</h2>
-                            </div>
-                        </div>
-                </section>
-                <section>
-                        <div class = "category_content content_limitation">
-                            <div class = "dish_container" id = "burger_and_sandwiches_content">
-                        
-                            </div>
-                        </div>
-                </section>
-                <section>
-                    <div class = "category_header">
-                        <div class = "category_container outer_distance content_limitation">
-                            <img class = "category_icon" src="assets/icon/pizza_icon.png" alt="icon of a pizza">
-                            <h2 class = "category_title">Pizza (30cm)</h2>
-                        </div>
-                    </div>
-                    <div class = "dish_container" id = "pizza_content">
-
-                    </div>
-                </section>
-                <section>
-                    <div class = "category_header">
-                        <div class = "category_container outer_distance content_limitation">
-                            <img class = "category_icon" src="assets/icon/salad.png" alt="icon of a salad">
-                            <h2 class = "category_title">Salad</h2>
-                        </div>
-                    </div>
-                    <div class = "dish_container content_limitation" id = "salad_content">
-
-                    </div>
-                </section>
-            </section>
-            <section>
-                <div id = "order_basket">
-
+        <section class = "menu_section">
+        <section>
+            <div class = "category_header">
+                <div class = "category_container outer_distance content_limitation">
+                    <img class = "category_icon" src="assets/icon/burger_icon.png" alt="icon of a burger">
+                    <h2 class = "category_title">Burger & Sandwiches</h2>
                 </div>
-            </section>
+            </div>
+            <div class = "category_content content_limitation">
+                <div class = "dish_container" id = "burger_and_sandwiches_content">
+                    
+                </div>
+            </div>
         </section>
+        <section>
+            <div class = "category_header">
+                <div class = "category_container outer_distance content_limitation">
+                    <img class = "category_icon" src="assets/icon/pizza_icon.png" alt="icon of a pizza">
+                    <h2 class = "category_title">Pizza (30cm)</h2>
+                </div>
+            </div>
+            <div class = "dish_container" id = "pizza_content">
+
+            </div>
+        </section>
+        <section>
+            <div class = "category_header">
+                <div class = "category_container outer_distance content_limitation">
+                    <img class = "category_icon" src="assets/icon/salad.png" alt="icon of a salad">
+                    <h2 class = "category_title">Salad</h2>
+                </div>
+            </div>
+            <div class = "dish_container content_limitation" id = "salad_content">
+
+            </div>
+        </section>
+        </section>
+        <div id = "order_basket">
+            <h3>Your Basket</h3>
+            <div></div>
+            <table class = "basket_table">
+                <tr class = "basket_tr">
+                    <td>Subtotal</td>
+                    <td>36,70</td>
+                </tr>
+                <tr class = "basket_tr">
+                    <td>Delivery fee</td>
+                    <td>4,99</td>
+                </tr>
+            </table>
+            <div class = "basket_price_bar"></div>
+            <div class = "basket_total">
+                <p>Total</p>
+                <p>36$</p>
+            </div>
+            <button id = "basket_order_button">Buy now ($)</button>
+        </div>
     </main>
     <footer>
         <div class = "footer_content">

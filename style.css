@@ -115,12 +115,15 @@ header {
 /*C_main*/
 
 main {
-    display: flex;
-}
-
-.main_content{
+    position: relative;
     display: flex;
     justify-content: space-between;
+}
+
+.menu_section{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .menu_info{
@@ -223,13 +226,6 @@ main {
 .category_content{
     display: flex;
     justify-content: space-evenly;
-}
-
-#order_basket{
-    height: 800px;
-    width: 400px;
-
-    background-color: var(--color-secondary);
 }
 
 /*C_footer*/

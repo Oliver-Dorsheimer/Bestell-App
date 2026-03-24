@@ -1,0 +1,54 @@
+#order_basket{
+    position: sticky;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 800px;
+    width: 400px;
+    padding: 16px;
+
+    background-color: var(--color-secondary);
+    border-top-left-radius: 32px;
+    border-bottom-left-radius: 32px;
+}
+
+.basket_table{
+    color: var(--color-primary-text);
+    width: 80%;
+
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.basket_tr{
+    display: flex;
+    justify-content: space-between;
+}
+
+.basket_price_bar{
+    height: 2px;
+    width: 80%;
+    background-color: white;
+}
+
+.basket_total{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+
+    color: var(--color-primary-text);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+#basket_order_button{
+    background-color: var(--color-primary);
+    color: var(--color-primary-text);
+    font-size: 32px;
+    font-weight: 700;
+    padding: 12px;
+
+    border-radius: 32px;
+}
