@@ -52,3 +52,43 @@
 
     border-radius: 32px;
 }
+
+.order_element_container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100px;
+    margin-bottom: 16px;
+    padding: 20px;
+
+    background-color: var(--color-primary-tint);
+    border-radius: 20px;
+}
+
+.order_element_title{
+    display: flex;
+}
+
+.order_element_price{
+    display: flex;
+}
+
+.price_control{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.add_and_remove_container{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#order_element_delete_icon{
+    height: 18px;
+    width: 16px;
+}
