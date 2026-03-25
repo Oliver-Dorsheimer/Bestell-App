@@ -89,6 +89,15 @@
 }
 
 #order_element_delete_icon{
+    cursor: pointer;
     height: 18px;
     width: 16px;
+}
+
+#order_element_subtract_icon{
+    cursor: pointer;
+}
+
+.dNone{
+    display: none;
 }

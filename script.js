@@ -46,21 +46,29 @@ function addToBasket(index, menuID){
         dishes[index].inBasket = true;
         basket.push(dishes[index]);
         renderElementFromBasket(menuID);
-        document.getElementById(`order_element_delete_icon${index}`).setAttribute("src","./assets/icon/delete_icon.png");
+        document.getElementById("order_element_subtract_icon").classList.add("dNone");
         console.log(basket);
     }else{
         let currentElementIndex = basket.findIndex(basketElement => basketElement.id == menuID);
-        document.getElementById(`order_element_delete_icon${index}`).setAttribute("src","./assets/icon/minus_icon.png");
+        document.getElementById("order_element_delete_icon").classList.add("dNone");
+        document.getElementById("order_element_subtract_icon").classList.remove("dNone");
         regenerateElementFromBasket(index);
     };
 };
 
-function suptractFromBasket(){
-
+function suptractFromBasket(menuID){
+    let index = basket.findIndex(basketElement => basketElement.id == menuID);
+    basket[index].amount--;
+    clearElement("basket_content");
+    renderElementFromBasket(menuID);
 };
 
 function removeFromBasket(){
 
+};
+
+function clearElement(id){
+    document.getElementById(id).innerHTML = "";
 };
 
 /*
