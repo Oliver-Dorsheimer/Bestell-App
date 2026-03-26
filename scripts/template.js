@@ -14,26 +14,26 @@ function dishTemplate(index){
     `
 };
 
-function basketContentTemplate(menuID, ){
+function basketContentTemplate(basketIndex, ){
     return `<div class = "order_element_container">
         <div class = "order_element_title">
-            <p class = "order_title" id = "title_amount${menuID}">${dishes[menuID].amount} x <span>${dishes[menuID].name}</span></p>
+            <p class = "order_title" id = "title_amount${basketIndex}">${basket[basketIndex].amount} x <span>${basket[basketIndex].name}</span></p>
         </div/
         <div class = "order_element_price">
             <div class = "price_control">
                 <div class = "add_and_remove_container">
-                    <img id = "order_element_delete_icon" onclick = "" src = "./assets/icon/delete_icon.png">
-                    <img id = "order_element_subtract_icon" onclick = "suptractFromBasket(${menuID})" src = "./assets/icon/minus_icon.png">
-                    <p id = "add_and_remove_amount${menuID}">${dishes[menuID].amount}</p>
+                    <img id = "order_element_delete_icon${basketIndex}" onclick = "" src = "./assets/icon/delete_icon.png">
+                    <img id = "order_element_subtract_icon${basketIndex}" onclick = "subtractFromBasket(${basketIndex})" src = "./assets/icon/minus_icon.png">
+                    <p id = "add_and_remove_amount${basketIndex}">${basket[basketIndex].amount}</p>
                     <img class = "order_element_delete_icon" src = ./assets/icon/add_icon.png>
                 </div>
-                <p>${Number(dishes[menuID].price) * Number(dishes[menuID].amount)}€</p>
+                <p>${Number(basket[basketIndex].price) * Number(basket[basketIndex].amount)}€</p>
             </div>
         </div>
     </div>
     `
 };
 
-function basketTitleTemplate(index){
-    return `${dishes[index].amount} x <span>${dishes[index].name}</span>`
+function basketTitleTemplate(basketIndex){
+    return `${basket[basketIndex].amount} x <span>${basket[basketIndex].name}</span>`
 }
