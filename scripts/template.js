@@ -14,26 +14,26 @@ function dishTemplate(index){
     `
 };
 
-function basketContentTemplate(basketIndex, ){
+function basketContentTemplate(id, indexJSON){
     return `<div class = "order_element_container">
         <div class = "order_element_title">
-            <p class = "order_title" id = "title_amount${basketIndex}">${basket[basketIndex].amount} x <span>${basket[basketIndex].name}</span></p>
+            <p class = "order_title" id = "title_amount${indexJSON}">${getFromDishesJSON("amount", indexJSON)} x <span>${getFromDishesJSON("name", indexJSON)}</span></p>
         </div/
         <div class = "order_element_price">
             <div class = "price_control">
                 <div class = "add_and_remove_container">
-                    <img id = "order_element_delete_icon${basketIndex}" onclick = "" src = "./assets/icon/delete_icon.png">
-                    <img id = "order_element_subtract_icon${basketIndex}" onclick = "subtractFromBasket(${basketIndex})" src = "./assets/icon/minus_icon.png">
-                    <p id = "add_and_remove_amount${basketIndex}">${basket[basketIndex].amount}</p>
-                    <img class = "order_element_delete_icon" src = ./assets/icon/add_icon.png>
+                    <img id = "order_element_delete_icon${indexJSON}" onclick = "removeElementFromBasket(${id})" src = "./assets/icon/delete_icon.png">
+                    <img id = "order_element_subtract_icon${indexJSON}" onclick = "subtractFromElementInBasket(${indexJSON})" src = "./assets/icon/minus_icon.png">
+                    <p id = "add_and_remove_amount${indexJSON}">${getFromDishesJSON("amount", indexJSON)}</p>
+                    <img id = "order_element_add_icon" class = "order_element_delete_icon" onclick = "addToElementInBasket(${indexJSON})" src = ./assets/icon/add_icon.png>
                 </div>
-                <p>${Number(basket[basketIndex].price) * Number(basket[basketIndex].amount)}€</p>
+                <p id = "current_price_of_element${indexJSON}">${getFromDishesJSON("price", indexJSON) * getFromDishesJSON("amount", indexJSON)}€</p>
             </div>
         </div>
     </div>
     `
 };
 
-function basketTitleTemplate(basketIndex){
-    return `${basket[basketIndex].amount} x <span>${basket[basketIndex].name}</span>`
-}
+function basketTitleTemplate(indexJSON){
+    return `${getFromDishesJSON("amount", indexJSON)} x <span>${getFromDishesJSON("name", indexJSON)}</span>`
+};

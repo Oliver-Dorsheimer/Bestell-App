@@ -7,7 +7,7 @@ function renderElements(){
 
 function setIds(){
     for(let i = 0; i < dishes.length; i++){
-        dishes[i].id = i;
+        dishes[i].id = i + 2;
     };
 };
 
@@ -42,18 +42,56 @@ function regenerateElementFromBasket(basketIndex){
     document.getElementById(`add_and_remove_amount${basketIndex}`).innerHTML = basket[basketIndex].amount;
 };
 */
-function addToBasket(index, menuID){
-    let isInBasket = basketArray.indexOf(getFromDishesJSON("id", index));
-    console.log(dishes)
-    console.log(basketArray)
-    console.log(dishes[index].amount)
-    if(isInBasket != -1){
-        setInDishesJSON("amount", getFromDishesJSON("amount", index) + 1, index);
-        //refresh rendering
+function reRenderBasket(id){
+    setInDishesJSON("amount", 1, findJSONIndexById(id));
+    document.getElementById("basket_content").innerHTML = "";
+    for(let i =0; i <basketArray.length; i++){
+        createElementInBasket(basketArray[i], findJSONIndexById(basketArray[i]));
+    };
+};
+
+function createElementInBasket(id, indexJSON){
+    document.getElementById("basket_content").innerHTML += basketContentTemplate(id, indexJSON);
+    setDnoneStates(indexJSON);
+    refreshPriceCalculation();
+};
+
+function refreshElementInBasket(indexJSON){
+    document.getElementById(`title_amount${indexJSON}`).innerHTML = basketTitleTemplate(indexJSON);
+    document.getElementById(`add_and_remove_amount${indexJSON}`).innerHTML = getFromDishesJSON("amount", indexJSON);
+    document.getElementById(`current_price_of_element${indexJSON}`).innerHTML = `${getFromDishesJSON("amount", indexJSON) * getFromDishesJSON("price", indexJSON)}€`;
+    
+    setDnoneStates(indexJSON);
+    refreshPriceCalculation();
+};
+
+function refreshPriceCalculation(){
+    let value = 0;
+    for (let i = 0; i< basketArray.length; i++){
+        let indexJSON = findJSONIndexById(basketArray[i]);
+        value += getFromDishesJSON("amount", indexJSON) * getFromDishesJSON("price", indexJSON);
+    };
+    document.getElementById("subtotal_amount").innerHTML = `${value}€`;
+    document.getElementById("total_price").innerHTML = `${value + 4.99}€`;
+    document.getElementById(`basket_order_button_price`).innerHTML = ` ${value + 4.99}`;
+};
+
+function buyBasket(){
+    removeAllElementsFromBasket();
+};
+
+function addToBasket(indexJSON, id){
+    
+    if(isInBasket(indexJSON)){
+        setInDishesJSON("amount", getFromDishesJSON("amount", indexJSON) + 1, indexJSON);
+        refreshElementInBasket(indexJSON);
     }else{
-        basketArray.push(getFromDishesJSON("id", index));
+        basketArray.push(getFromDishesJSON("id", indexJSON));
+        createElementInBasket(id, findJSONIndexById(id));
     };
 
+    console.log(dishes)
+    console.log(basketArray)
     /*
     if(isArticleInBasket(index)){
         let basketIndex = basket.findIndex(basketElement => basketElement.id == menuID);
@@ -72,6 +110,59 @@ function addToBasket(index, menuID){
         console.log(basket);
         console.log(basket[basketIndex].amount);
     };*/
+};
+
+function addToElementInBasket(indexJSON){
+    setInDishesJSON("amount", getFromDishesJSON("amount", indexJSON) + 1, indexJSON);
+    refreshElementInBasket(indexJSON);
+};
+
+function subtractFromElementInBasket(indexJSON){
+    let currentAmount = getFromDishesJSON("amount", indexJSON);
+    setInDishesJSON("amount", currentAmount - 1, indexJSON);
+    refreshElementInBasket(indexJSON);
+};
+
+function removeAllElementsFromBasket(){
+    for(let i = 0; i < dishes.length; i++){
+        setInDishesJSON("amount", 1, i);
+    };
+     document.getElementById("basket_content").innerHTML = "";
+};
+
+function removerAllElementsFromBasket(){
+    for(let i = 0; i < basketArray.length; i++){
+        basketArray.splice(i, 1);
+    };
+};
+
+function removeElementFromBasket(id){
+    let indexArray = basketArray.indexOf(id);
+    basketArray.splice(indexArray, 1);
+    reRenderBasket(id);
+};
+
+function setDnoneStates(indexJSON){
+    if(getFromDishesJSON("amount", indexJSON) == 1){
+        document.getElementById(`order_element_subtract_icon${indexJSON}`).classList.add("dNone");
+        document.getElementById(`order_element_delete_icon${indexJSON}`).classList.remove("dNone");
+    }else if(getFromDishesJSON("amount", indexJSON) > 1){
+        document.getElementById(`order_element_delete_icon${indexJSON}`).classList.add("dNone");
+        document.getElementById(`order_element_subtract_icon${indexJSON}`).classList.remove("dNone");
+    };
+};
+
+function isInBasket(indexJSON){
+    if(basketArray.indexOf(getFromDishesJSON("id", indexJSON)) == -1){
+        return false;
+    }else{
+        return true;
+    };
+};
+
+function findJSONIndexById(id){
+    console.log(dishes.findIndex(dishElement => dishElement.id == id))
+    return dishes.findIndex(dishElement => Number(dishElement.id) == id);
 };
 /*
 function subtractFromBasket(basketIndex){

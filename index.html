@@ -78,19 +78,19 @@
             <table class = "basket_table">
                 <tr class = "basket_tr">
                     <td>Subtotal</td>
-                    <td>36,70</td>
+                    <td id = "subtotal_amount"></td>
                 </tr>
                 <tr class = "basket_tr">
                     <td>Delivery fee</td>
-                    <td>4,99</td>
+                    <td id = "delivery_fee">4.99</td>
                 </tr>
             </table>
             <div class = "basket_price_bar"></div>
             <div class = "basket_total">
                 <p>Total</p>
-                <p>36€</p>
+                <p id = "total_price">36</p>
             </div>
-            <button id = "basket_order_button">Buy now (€)</button>
+            <button id = "basket_order_button" onclick = "buyBasket()">Buy now<span id = "basket_order_button_price"></span> (€)</button>
         </div>
     </main>
     <footer>
