@@ -1,124 +1,177 @@
 let dishes = [
     {
-        id: 0,
-        category : "burger_and_sandwiches_content",
-        picture : "mushroom_burbur",
-        name : "Veggie mushroom black burger",
-        description : "Mixed green salad, Tomatoes, Edamame, Mushrooms",
-        price : "16.90",
-        amount : "1",
-        inBasket : false,
+        "id": "0",
+        "category" : "burger_and_sandwiches_content",
+        "picture" : "mushroom_burbur",
+        "name" : "Veggie mushroom black burger",
+        "description" : "Mixed green salad, Tomatoes, Edamame, Mushrooms",
+        "price" : "16.90",
+        "amount" : "1",
+        "inBasket" : "false",
     },
     {
-        id: 1,
-        category : "burger_and_sandwiches_content",
-        picture : "meat_burbur",
-        name : "All meat burger",
-        description : "Beef, Bacon, Dill pickles, Smoked cheese, Ketchup, BBQ souse",
-        price : "15.90",
-        amount : "1",
-        inBasket : false,
+        "id": "0",
+        "category" : "burger_and_sandwiches_content",
+        "picture" : "meat_burbur",
+        "name" : "All meat burger",
+        "description" : "Beef, Bacon, Dill pickles, Smoked cheese, Ketchup, BBQ souse",
+        "price" : "15.90",
+        "amount" : "1",
+        "inBasket" : "false",
     },
     {
-        id: 1,
-        category : "burger_and_sandwiches_content",
-        picture : "red_burbur",
-        name : "Beef red burger",
-        description : "Beef, Cheese, Tomatoes, Lettuce, Onion",
-        price : "14.90",
-        amount : "1",
-        inBasket : false,
+        "id": "0",
+        "category" : "burger_and_sandwiches_content",
+        "picture" : "red_burbur",
+        "name" : "Beef red burger",
+        "description" : "Beef, Cheese, Tomatoes, Lettuce, Onion",
+        "price" : "14.90",
+        "amount" : "1",
+        "inBasket" : "false",
     },
     {
-        id: 1,
-        category : "burger_and_sandwiches_content",
-        picture : "chicken_burbur",
-        name : "BIg chicken burger",
-        description : "Chicken, Cheese, Tomatoes, Lettuce, Onion, Bell pepper, ",
-        price : "15.90",
-        amount : "1",
-        inBasket : false,
+        "id": "0",
+        "category" : "burger_and_sandwiches_content",
+        "picture" : "chicken_burbur",
+        "name" : "BIg chicken burger",
+        "description" : "Chicken, Cheese, Tomatoes, Lettuce, Onion, Bell pepper, ",
+        "price" : "15.90",
+        "amount" : "1",
+        "inBasket" : "false",
     },
     {
-        id: 1,
-        category : "pizza_content",
-        picture : "margherita_pizza",
-        name : "Pizza Margherita",
-        description : "Tomato Sauce, Mozzarella",
-        price : "11.90",
-        amount : "1",
-        inBasket : false,
+        "id": "0",
+        "category" : "pizza_content",
+        "picture" : "margherita_pizza",
+        "name" : "Pizza Margherita",
+        "description" : "Tomato Sauce, Mozzarella",
+        "price" : "11.90",
+        "amount" : "1",
+        "inBasket" : "false",
     },
     {
-        id: 1,
-        category : "pizza_content",
-        picture : "chorizo_pizza",
-        name : "Pizza Chorizo",
-        description : "Tomato slices, Mozzarella, Chorizo",
-        price : "13.90",
-        amount : "1",
-        inBasket : false,
+        "id": "0",
+        "category" : "pizza_content",
+        "picture" : "chorizo_pizza",
+        "name" : "Pizza Chorizo",
+        "description" : "Tomato slices, Mozzarella, Chorizo",
+        "price" : "13.90",
+        "amount" : "1",
+        "inBasket" : "false",
     },
     {
-        id: 1,
-        category : "pizza_content",
-        picture : "funghi_pizza",
-        name : "Funghi",
-        description : "Red onion, Olives, Button Mushrooms, Mozzarella",
-        price : "12.90",
-        amount : "1",
-        inBasket : false,
+        "id": "0",
+        "category" : "pizza_content",
+        "picture" : "funghi_pizza",
+        "name" : "Funghi",
+        "description" : "Red onion, Olives, Button Mushrooms, Mozzarella",
+        "price" : "12.90",
+        "amount" : "1",
+        "inBasket" : "false",
     },
     {
-        id: 1,
-        category : "pizza_content",
-        picture : "formaggi_pizza",
-        name : "Quattro Formaggi with Chicken ",
-        description : "Chicken, Mozzarella, Gorgonzola, Fontina,  Parmigiano Reggiano",
-        price : "15.90",
-        amount : "1",
-        inBasket : false,
+        "id": "0",
+        "category" : "pizza_content",
+        "picture" : "formaggi_pizza",
+        "name" : "Quattro Formaggi with Chicken ",
+        "description" : "Chicken, Mozzarella, Gorgonzola, Fontina,  Parmigiano Reggiano",
+        "price" : "15.90",
+        "amount" : "1",
+        "inBasket" : "false",
     },
     {
-        id: 1,
-        category : "salad_content",
-        picture : "arugular_salad",
-        name : "Warm beef arugula salad",
-        description : "Beef, Arugula, Field salad, Greek feta, Cherry tomatoes, Sun-dried Tomatoes, Balsamic-vinegar dressing",
-        price : "16.90",
-        amount : "1",
-        inBasket : false,
+        "id": "0",
+        "category" : "salad_content",
+        "picture" : "arugular_salad",
+        "name" : "Warm beef arugula salad",
+        "description" : "Beef, Arugula, Field salad, Greek feta, Cherry tomatoes, Sun-dried Tomatoes, Balsamic-vinegar dressing",
+        "price" : "16.90",
+        "amount" : "1",
+        "inBasket" : "false",
     },
     {
-        id: 1,
-        category : "salad_content",
-        picture : "mini_salad",
-        name : "Mini green Salad",
-        description : "Green salad, Cucumber, Carrots, Parsley, Radishes ",
-        price : "7.90",
-        amount : "1",
-        inBasket : false,
+        "id": "0",
+        "category" : "salad_content",
+        "picture" : "mini_salad",
+        "name" : "Mini green Salad",
+        "description" : "Green salad, Cucumber, Carrots, Parsley, Radishes ",
+        "price" : "7.90",
+        "amount" : "1",
+        "inBasket" : "false",
     },
     {
-        id: 1,
-        category : "salad_content",
-        picture : "sea_food_salad",
-        name : "Green Salad with sea food",
-        description : "Mixed greens, Cherry tomatoes, Red onion, Mussels, Squid rings, Shrimp, Dijon mustard-lemon dressing with dill",
-        price : "16.90",
-        amount : "1",
-        inBasket : false,
+        "id": "0",
+        "category" : "salad_content",
+        "picture" : "sea_food_salad",
+        "name" : "Green Salad with sea food",
+        "description" : "Mixed greens, Cherry tomatoes, Red onion, Mussels, Squid rings, Shrimp, Dijon mustard-lemon dressing with dill",
+        "price" : "16.90",
+        "amount" : "1",
+        "inBasket" : "false",
     },
     {
-        id: 1,
-        category : "salad_content",
-        picture : "vegan_salad",
-        name : "Vegan green salad with tofu",
-        description : "Green salad, Cherry tomatoes, Cucumber, Baby spinach, Edamame, Radishes, Bittercress, Tofu, Peanuts",
-        price : "14.90",
-        amount : "1",
-        inBasket : false,
+        "id": "0",
+        "category" : "salad_content",
+        "picture" : "vegan_salad",
+        "name" : "Vegan green salad with tofu",
+        "description" : "Green salad, Cherry tomatoes, Cucumber, Baby spinach, Edamame, Radishes, Bittercress, Tofu, Peanuts",
+        "price" : "14.90",
+        "amount" : "1",
+        "inBasket" : "false",
     },
 ];
 
-let basket = [];
+function getFromDishesJSON(variable, index){
+    let returnValue = 0;
+    switch(variable){
+        case "id": returnValue = Number(dishes[index].id);
+            break;
+        case "category" : returnValue = dishes[index].category;
+            break;
+        case "picture" : returnValue = dishes[index].picture;
+            break;
+        case "name" : returnValue = dishes[index].name;
+            break;
+        case "description" : returnValue = dishes[index].description;
+            break;
+        case "price" : returnValue = Number(dishes[index].price);
+            break;
+        case "amount" : returnValue = Number(dishes[index].amount);
+            break;
+        case "inBasket" :   
+            if(dishes[index].inBasket === "true"){
+                returnValue = true;
+            }else if(dishes[index].inBasket === "false"){
+                returnValue = false;
+            }else{
+                returnValue = "could not determine bool value"
+            };
+            break;
+        default : returnValue = "could not find data in dishesJSON";
+    };
+    return returnValue;
+};
+
+function setInDishesJSON(variableToSet, value, index){
+    switch(variableToSet){
+        case "id": dishes[index].id = `${value}`;
+            break;
+        case "category" : dishes[index].category = `${value}`;
+            break;
+        case "picture" : dishes[index].picture = `${value}`;
+            break;
+        case "name" : dishes[index].name = `${value}`;
+            break;
+        case "description" : dishes[index].description = `${value}`;
+            break;
+        case "price" : dishes[index].price = `${value}`;
+            break;
+        case "amount" : dishes[index].amount = `${value}`;
+            break;
+        case "inBasket" : dishes[index].inBasket = `${value}`;
+            break;
+        default : returnValue = "could not set variable in JSON";
+    };
+};
+
+let basketArray = [];

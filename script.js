@@ -31,6 +31,7 @@ function renderBasketContents(index){
     };
 };
 */
+/*
 function renderElementFromBasket(basketIndex){
     document.getElementById("basket_content").innerHTML += basketContentTemplate(basketIndex);
 };
@@ -40,8 +41,20 @@ function regenerateElementFromBasket(basketIndex){
     document.getElementById(`title_amount${basketIndex}`).innerHTML = basketTitleTemplate(basketIndex);
     document.getElementById(`add_and_remove_amount${basketIndex}`).innerHTML = basket[basketIndex].amount;
 };
-
+*/
 function addToBasket(index, menuID){
+    let isInBasket = basketArray.indexOf(getFromDishesJSON("id", index));
+    console.log(dishes)
+    console.log(basketArray)
+    console.log(dishes[index].amount)
+    if(isInBasket != -1){
+        setInDishesJSON("amount", getFromDishesJSON("amount", index) + 1, index);
+        //refresh rendering
+    }else{
+        basketArray.push(getFromDishesJSON("id", index));
+    };
+
+    /*
     if(isArticleInBasket(index)){
         let basketIndex = basket.findIndex(basketElement => basketElement.id == menuID);
         if(basket[basketIndex].amount > 1){
@@ -58,9 +71,9 @@ function addToBasket(index, menuID){
         console.log(dishes);
         console.log(basket);
         console.log(basket[basketIndex].amount);
-    };
+    };*/
 };
-
+/*
 function subtractFromBasket(basketIndex){
     if(basket[basketIndex].amount > 1){
         clearElement(basketIndex);
@@ -90,6 +103,7 @@ function isArticleInBasket(index){
 function setDnoneToArticleIcons(){
 
 };
+*/
 
 /*
 if(dishes[index].inBasket == false){

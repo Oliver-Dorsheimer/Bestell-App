@@ -1,14 +1,14 @@
 function dishTemplate(index){
     return `
         <article class = "dish_card">
-            <img class = "dish_img" src = "./assets/img/${dishes[index].picture}.jpg">
+            <img class = "dish_img" src = "./assets/img/${getFromDishesJSON("picture", index)}.jpg">
             <div class = "dish_info">
-                <h4>${dishes[index].name}</h4>
-                <p>${dishes[index].description}</p>
+                <h4>${getFromDishesJSON("name", index)}</h4>
+                <p>${getFromDishesJSON("description", index)}</p>
             </div>
             <div class = "dish_price_and_order">
-                <h4>${dishes[index].price}€</h4>
-                <button class = "dish_order_button" onclick = "addToBasket(${index}, ${dishes[index].id})">Add to Basket</button>
+                <h4>${getFromDishesJSON("price", index)}€</h4>
+                <button class = "dish_order_button" onclick = "addToBasket(${index}, ${getFromDishesJSON("id", index)})">Add to Basket</button>
             </div>
         </article>
     `
