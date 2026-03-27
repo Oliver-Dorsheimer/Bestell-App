@@ -72,24 +72,26 @@
                 </div>
             </section>
         </section>
-        <div id = "order_basket">
+        <div id = "basket">
             <h3>Your Basket</h3>
             <div id = "basket_content"></div>
-            <table class = "basket_table">
-                <tr class = "basket_tr">
+            <section class = "basket_section_prices">
+                 <table class = "price_and_delivery_table">
+                <tr class = "price_and_delivery__tr">
                     <td>Subtotal</td>
                     <td id = "subtotal_amount"></td>
                 </tr>
-                <tr class = "basket_tr">
+                <tr class = "price_and_delivery__tr">
                     <td>Delivery fee</td>
-                    <td id = "delivery_fee">4.99</td>
+                    <td id = "delivery_fee">4,99€</td>
                 </tr>
-            </table>
-            <div class = "basket_price_bar"></div>
-            <div class = "basket_total">
-                <p>Total</p>
-                <p id = "total_price">36</p>
-            </div>
+                </table>
+                <div class = "basket_price_bar"></div>
+                <div class = "basket_total">
+                    <p>Total</p>
+                    <p id = "total_price">4,99€</p>
+                </div>
+            </section>
             <button id = "basket_order_button" onclick = "buyBasket()">Buy now<span id = "basket_order_button_price"></span> (€)</button>
         </div>
     </main>

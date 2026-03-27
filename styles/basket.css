@@ -1,4 +1,4 @@
-#order_basket{
+#basket{
     position: sticky;
     top: 0px;
     right: 0px;
@@ -14,7 +14,23 @@
     border-bottom-left-radius: 32px;
 }
 
-.basket_table{
+#basket_content{
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(231, 195, 173, 1) var(--color-secondary);
+    padding-right: 8px;
+    height: 600px;
+}
+
+.basket_section_prices{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.price_and_delivery_table{
     color: var(--color-primary-text);
     width: 80%;
 
@@ -22,7 +38,7 @@
     font-weight: 600;
 }
 
-.basket_tr{
+.price_and_delivery__tr{
     display: flex;
     justify-content: space-between;
 }
@@ -53,11 +69,11 @@
     border-radius: 32px;
 }
 
-.order_element_container{
+.basket_element_container{
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
     height: 100px;
+    width: 320px;
     margin-bottom: 16px;
     padding: 20px;
 
@@ -65,18 +81,18 @@
     border-radius: 20px;
 }
 
-.order_element_title{
-    display: flex;
-}
-
-.order_element_price{
-    display: flex;
-}
-
-.price_control{
+.basket_section_element_title_and_priceControl{
     display: flex;
     justify-content: space-between;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+.basket_section_price_and_delete{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 8px;
 
     font-size: 24px;
     font-weight: 700;
@@ -88,7 +104,12 @@
     gap: 8px;
 }
 
-#order_element_delete_icon{
+.icon_wrapper{
+    height: 18px;
+    width: 16px;
+}
+
+.order_element_delete_icon{
     cursor: pointer;
     height: 18px;
     width: 16px;
