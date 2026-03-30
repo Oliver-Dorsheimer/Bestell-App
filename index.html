@@ -14,7 +14,7 @@
 </head>
 <body onload="renderElements();">
     <header>
-        <div class = "header_container outer_distance content_limitation">
+        <div class = "header_container  ">
             <img class = "header_icon" src = "assets/icon/header_icon.png" alt="image which shows the app logo">
             <img class = "header_menu" src = "assets/icon/header_menu.png" alt="image burger menu">
         </div>
@@ -35,27 +35,15 @@
             <p class = "title_undertext">The best of Burgers, Pizza, and Greens, all in one great place.</p>
     </section>
     <main>
-        <dialog id = "dialog_purchase_confirmed">
-            <div class = "dialog_header">
-                <button id = "dialog_close_button" onclick="closePurchaseConfirmDialog()">
-                    <img src="./assets/icon/close_icon.png" alt="">
-                </button>
-            </div>
-            <img class = "car_icon" src = "./assets/icon/car_icon.png">
-            <div>
-                <p class = "dialog_title">Order confirmed!</p>
-                <p class = "dialog_title_undertext">Your food is on the way!</p>
-            </div>
-        </dialog>
         <section class = "menu_section">
-            <section>
+            <section class = "menus_undersection">
                 <div class = "category_header">
-                    <div class = "category_container outer_distance content_limitation">
+                    <div class = "category_container  ">
                         <img class = "category_icon" src="assets/icon/burger_icon.png" alt="icon of a burger">
-                        <h2 class = "category_title">Burger & Sandwiches</h2>
+                        <h2 class = "category_title">Burger</h2>
                     </div>
                 </div>
-                <div class = "category_content content_limitation">
+                <div class = "category_content ">
                     <div class = "dish_container" id = "burger_and_sandwiches_content">
                     
                     </div>
@@ -63,27 +51,31 @@
             </section>
             <section>
                 <div class = "category_header">
-                    <div class = "category_container outer_distance content_limitation">
+                    <div class = "category_container  ">
                         <img class = "category_icon" src="assets/icon/pizza_icon.png" alt="icon of a pizza">
                         <h2 class = "category_title">Pizza (30cm)</h2>
                     </div>
                 </div>
-                <div class = "dish_container" id = "pizza_content">
+                <div class = "category_content ">
+                    <div class = "dish_container" id = "pizza_content">
 
+                    </div>
                 </div>
             </section>
             <section>
                 <div class = "category_header">
-                    <div class = "category_container outer_distance content_limitation">
+                    <div class = "category_container ">
                         <img class = "category_icon" src="assets/icon/salad.png" alt="icon of a salad">
                         <h2 class = "category_title">Salad</h2>
                     </div>
                 </div>
-                <div class = "dish_container content_limitation" id = "salad_content">
+                <div class = "category_content ">
+                    <div class = "dish_container " id = "salad_content">
 
+                    </div>
                 </div>
             </section>
-        </section>
+            <section class = "basket_wrapper">
         <div id = "basket">
             <h3>Your Basket</h3>
             <div id = "basket_content"></div>
@@ -106,10 +98,30 @@
             </section>
             <button id = "basket_order_button" onclick = "buyBasket()">Buy now<span id = "basket_order_button_price"></span> (€)</button>
         </div>
+        </section>
+            <dialog id = "dialog_purchase_confirmed">
+                <div class = "dialog_header">
+                    <button id = "dialog_close_button" onclick="closePurchaseConfirmDialog()">
+                        <img src="./assets/icon/close_icon.png" alt="">
+                    </button>
+                </div>
+                <img class = "car_icon" src = "./assets/icon/car_icon.png">,
+                <div>
+                    <p class = "dialog_title">Order confirmed!</p>
+                    <p class = "dialog_title_undertext">Your food is on the way!</p>
+                </div>
+            </dialog>
+        </section>
+        <section class = "bottom_menu">
+            <img src="assets/icon/home_icon.png" alt="">
+            <img src="assets/icon/person_icon.png" alt="">
+            <img src="assets/icon/header_menu.png" alt="">
+            <img src="assets/icon/shopping_cart_icon.png" alt="">
+        </section>
     </main>
     <footer>
         <div class = "footer_content">
-            <p class = "footer_text"><img src="assets/icon/copyright_icon.png" alt="copyright icon">2025 Burger House</p>
+            <p class = "footer_text"><img class = "footer_img" src="assets/icon/copyright_icon.png" alt="copyright icon">2025 Burger House</p>
             <p class = "footer_text">Imprint</p>
             <p class = "footer_text">Cookie Preferences</p>
         </div>
