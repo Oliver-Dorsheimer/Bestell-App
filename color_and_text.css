@@ -62,3 +62,15 @@ h4 {
     font-size: 22px;
     font-weight: 700;
 }
+
+.dialog_title{
+    color: var(--color-primary-tint);
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.dialog_title_undertext{
+    color: var(--color-primary-tint);
+    font-size: 29px;
+    font-weight: 700;
+}

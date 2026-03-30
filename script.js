@@ -15,8 +15,6 @@ function renderElementsFromCategory(category){
     for(let i = 0; i < dishes.length; i++){
         if(dishes[i].category == category){
             document.getElementById(category).innerHTML += dishTemplate(i);
-        }else{
-
         };
     };
 };
@@ -71,7 +69,8 @@ function calculateCents(priceInCent, deliveryFeeInCents){
 
 function buyBasket(){
     removeAllElementsFromBasket();
-    refreshPriceCalculation()
+    refreshPriceCalculation();
+    openPurchaseConfirmDialog();
 };
 
 function addToBasket(indexJSON, id){
@@ -138,4 +137,13 @@ function isInBasket(indexJSON){
 
 function findJSONIndexById(id){
     return dishes.findIndex(dishElement => Number(dishElement.id) == id);
+};
+
+function openPurchaseConfirmDialog(){
+    document.getElementById("dialog_purchase_confirmed").showModal();
+    setTimeout(closePurchaseConfirmDialog, 2500);
+};
+
+function closePurchaseConfirmDialog(){
+    document.getElementById("dialog_purchase_confirmed").close();
 };

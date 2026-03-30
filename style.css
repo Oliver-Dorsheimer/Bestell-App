@@ -228,6 +228,45 @@ main {
     justify-content: space-evenly;
 }
 
+#dialog_purchase_confirmed{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    background-color: var(--color-secondary);
+    padding: 48px;
+
+    border-radius: 30px;
+}
+
+#dialog_purchase_confirmed[open]{
+    display: flex;
+}
+
+.dialog_header{
+    display: flex;
+    justify-content: end;
+    height: 16px;
+    width: 100%;
+}
+
+#dialog_close_button{
+    display: flex;
+    justify-content: end;
+    height: 16px;
+    width: 16px;
+    
+
+    background-color: transparent;
+}
+
+.car_icon{
+    height: 60px;
+    width: 80px;
+
+    object-fit: cover;
+}
+
 /*C_footer*/
 
 footer {

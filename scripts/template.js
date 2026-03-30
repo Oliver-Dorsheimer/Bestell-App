@@ -19,14 +19,22 @@ function basketContentTemplate(id, indexJSON){
         <section class = "basket_section_element_title_and_priceControl">
             <p class = "basket_title" id = "title_amount${indexJSON}">${getFromDishesJSON("amount", indexJSON)} x <span>${getFromDishesJSON("name", indexJSON)}</span></p>
             <div class = "add_and_remove_container">
-                    <img id = "order_element_delete_icon${indexJSON}" class = "order_element_delete_icon" onclick = "removeElementFromBasket(${id})" src = "./assets/icon/delete_icon.png">
-                    <img id = "order_element_subtract_icon${indexJSON}" onclick = "subtractFromElementInBasket(${indexJSON})" src = "./assets/icon/minus_icon.png">
+                    <button id = "order_element_delete_icon${indexJSON}" class = "order_element_delete_icon basket_buttons" onclick = "removeElementFromBasket(${id})">
+                        <img  src = "./assets/icon/delete_icon.png">
+                    </button>
+                    <button id = "order_element_subtract_icon${indexJSON}" class = "basket_buttons" onclick = "subtractFromElementInBasket(${indexJSON})">
+                        <img  src = "./assets/icon/minus_icon.png">
+                    </button>
                     <p id = "add_and_remove_amount${indexJSON}">${getFromDishesJSON("amount", indexJSON)}</p>
-                    <img id = "order_element_add_icon" class = "order_element_delete_icon" onclick = "addToElementInBasket(${indexJSON})" src = ./assets/icon/add_icon.png>
+                    <button id = "order_element_add_icon" class = "order_element_delete_icon basket_buttons" onclick = "addToElementInBasket(${indexJSON})">
+                        <img  src = ./assets/icon/add_icon.png>
+                    </button>
             </div>
         </section>
         <section class = "basket_section_price_and_delete">
-            <img id = "order_element_delete_element_button${indexJSON}" class = "order_element_delete_icon" onclick = "removeElementFromBasket(${id})" src = "./assets/icon/delete_icon.png">
+            <button id = "order_element_delete_element_button${indexJSON}" class = "order_element_delete_icon basket_buttons" onclick = "removeElementFromBasket(${id})">
+                <img  src = "./assets/icon/delete_icon.png">
+            </button>
             <p id = "current_price_of_element${indexJSON}">${parseInt(getFromDishesJSON("euro", indexJSON))},${getFromDishesJSON("cents", indexJSON)}€</p>
         </section>
     </div>

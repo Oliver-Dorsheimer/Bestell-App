@@ -104,6 +104,11 @@
     gap: 8px;
 }
 
+.basket_buttons{
+    background-color: transparent;
+    border-style: hidden;
+}
+
 .icon_wrapper{
     height: 18px;
     width: 16px;
