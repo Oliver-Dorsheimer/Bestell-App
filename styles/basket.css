@@ -3,22 +3,27 @@
     top: 0;
     bottom: 0;
     right: 0;
+    margin-right: calc((100% - 1876px)/2);
 }
 
 #basket{
     position: sticky;
     top: 0px;
     right: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     height: 800px;
     width: 400px;
     padding: 16px;
+    /*2200px = 328px, 2600px =  */
 
     background-color: var(--color-secondary);
     border-top-left-radius: 32px;
     border-bottom-left-radius: 32px;
+}
+
+.basket_class{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #basket_content{
@@ -73,6 +78,7 @@
     font-weight: 700;
     padding: 12px;
 
+    cursor: pointer;
     border-radius: 32px;
 }
 
@@ -109,6 +115,9 @@
     display: flex;
     align-items: center;
     gap: 8px;
+
+    font-size: 24px;
+    font-weight: 700;
 }
 
 .basket_buttons{
@@ -136,27 +145,31 @@
     display: none;
 }
 
-@media(max-width:1300px){
+@media(max-width:1890px){
+
+    .basket_wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin-right: 0;
+    }
+}
+
+
+@media(max-width:1550px){
 
     #basket{
-        width: 300px;
+        width: 250px;
     }
 
     .basket_element_container{
         height: auto;
         width: 260px;
     }
-
-
-
-
-
-
-
-
 }
 
-@media(max-width:1000px){
+@media(max-width:1400px){
     #basket{
         width: 250px;
     }
@@ -169,56 +182,20 @@
 
 }
 
-@media(max-width:680px){
-    
-    .basket_wrapper{
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 100%;
+@media(max-width:1200px){
+    .content_limitation{
+        max-width: 670px;
     }
-
-    #basket{
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        height: 90vh;
-        width: 100%;
-        padding: 8px;
-
-        background-color: var(--color-secondary);
-        border-top-left-radius: 32px;
-        border-bottom-left-radius: 32px;
-    }
-
-    .basket_element_container{
-        padding: 10px;
-        width: 250px;
-        flex: 1;
-    }
-
-    .basket_section_prices{
-        width: 70%;
-    }
-
-    #basket_order_button{
-        width: 60%;
-        margin-top: 16px;
-    }
-
-    .basket_price_bar{
-        margin-block: 16px;
-    }
-
 }
 
-@media(max-width:380px){
-    .basket_element_container{
-        padding: 10px;
-        width: 200px;
-        flex: 1;
+@media(max-width:780px){
+    .content_limitation{
+        max-width: 400px;
     }
+}
 
-
-
+@media(max-width:660px){
+    .content_limitation{
+        max-width: 900px;
+    }
 }

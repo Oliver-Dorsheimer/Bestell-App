@@ -14,7 +14,7 @@
 </head>
 <body onload="renderElements();">
     <header>
-        <div class = "header_container  ">
+        <div class = "header_container outer_distance content_limitation">
             <img class = "header_icon" src = "assets/icon/header_icon.png" alt="image which shows the app logo">
             <img class = "header_menu" src = "assets/icon/header_menu.png" alt="image burger menu">
         </div>
@@ -25,25 +25,30 @@
         </div>
     </section>
     <section class = "section_title">
-            <div class = "main_title_container">
-                <h1><span class = "title_primary">Burger</span> House</h1>
-                <div class = "title_rating_container">
-                    <img class = "title_rating_icon" src = "assets/icon/star_icon.png" alt="rating of the restaurant">
-                    <p class = "rating_text">4,1<span>(317)</span></p>
+            <div class = "section_title_wrapper">
+                <div class = "main_title_container content_limitation">
+                    <h1><span class = "title_primary">Burger</span> House</h1>
+                    <div class = "title_rating_container">
+                        <img class = "title_rating_icon" src = "assets/icon/star_icon.png" alt="rating of the restaurant">
+                        <p class = "rating_text">4,1<span>(317)</span></p>
+                    </div>
                 </div>
+                <p class = "title_undertext">The best of Burgers, Pizza, and Greens, all in one great place.</p>
             </div>
-            <p class = "title_undertext">The best of Burgers, Pizza, and Greens, all in one great place.</p>
     </section>
     <main>
         <section class = "menu_section">
-            <section class = "menus_undersection">
+            <div class = "menu_section_content_wrapper">
+                <section class = "menus_undersection">
                 <div class = "category_header">
-                    <div class = "category_container  ">
+                    <div class = "category_wrapper content_limitation">
+                        <div class = "category_container">
                         <img class = "category_icon" src="assets/icon/burger_icon.png" alt="icon of a burger">
                         <h2 class = "category_title">Burger</h2>
                     </div>
+                    </div>
                 </div>
-                <div class = "category_content ">
+                <div class = "category_content content_limitation">
                     <div class = "dish_container" id = "burger_and_sandwiches_content">
                     
                     </div>
@@ -51,12 +56,15 @@
             </section>
             <section>
                 <div class = "category_header">
-                    <div class = "category_container  ">
-                        <img class = "category_icon" src="assets/icon/pizza_icon.png" alt="icon of a pizza">
-                        <h2 class = "category_title">Pizza (30cm)</h2>
+                    <div class = "category_wrapper content_limitation">
+                        <div class = "category_container">
+                            <img class = "category_icon" src="assets/icon/pizza_icon.png" alt="icon of a pizza">
+                            <h2 class = "category_title">Pizza (30cm)</h2>
+                        </div>
                     </div>
+                    
                 </div>
-                <div class = "category_content ">
+                <div class = "category_content content_limitation">
                     <div class = "dish_container" id = "pizza_content">
 
                     </div>
@@ -64,19 +72,36 @@
             </section>
             <section>
                 <div class = "category_header">
-                    <div class = "category_container ">
-                        <img class = "category_icon" src="assets/icon/salad.png" alt="icon of a salad">
-                        <h2 class = "category_title">Salad</h2>
+                    <div class = "category_wrapper content_limitation">
+                        <div class = "category_container">
+                            <img class = "category_icon" src="assets/icon/salad.png" alt="icon of a salad">
+                            <h2 class = "category_title">Salad</h2>
+                        </div>
                     </div>
+                    
                 </div>
-                <div class = "category_content ">
+                <div class = "category_content content_limitation">
                     <div class = "dish_container " id = "salad_content">
 
                     </div>
                 </div>
             </section>
+            </div>
+            
+            <dialog id = "dialog_purchase_confirmed">
+                <div class = "dialog_header">
+                    <button id = "dialog_close_button" onclick="closePurchaseConfirmDialog()">
+                        <img src="./assets/icon/close_icon.png" alt="">
+                    </button>
+                </div>
+                <img class = "car_icon" src = "./assets/icon/car_icon.png">,
+                <div>
+                    <p class = "dialog_title">Order confirmed!</p>
+                    <p class = "dialog_title_undertext">Your food is on the way!</p>
+                </div>
+            </dialog>
             <section class = "basket_wrapper">
-        <div id = "basket">
+        <div id = "basket" class = "basket_class">
             <h3>Your Basket</h3>
             <div id = "basket_content"></div>
             <section class = "basket_section_prices">
@@ -99,33 +124,22 @@
             <button id = "basket_order_button" onclick = "buyBasket()">Buy now<span id = "basket_order_button_price"></span> (€)</button>
         </div>
         </section>
-            <dialog id = "dialog_purchase_confirmed">
-                <div class = "dialog_header">
-                    <button id = "dialog_close_button" onclick="closePurchaseConfirmDialog()">
-                        <img src="./assets/icon/close_icon.png" alt="">
-                    </button>
-                </div>
-                <img class = "car_icon" src = "./assets/icon/car_icon.png">,
-                <div>
-                    <p class = "dialog_title">Order confirmed!</p>
-                    <p class = "dialog_title_undertext">Your food is on the way!</p>
-                </div>
-            </dialog>
-        </section>
-        <section class = "bottom_menu">
-            <img src="assets/icon/home_icon.png" alt="">
-            <img src="assets/icon/person_icon.png" alt="">
-            <img src="assets/icon/header_menu.png" alt="">
-            <img src="assets/icon/shopping_cart_icon.png" alt="">
         </section>
     </main>
     <footer>
-        <div class = "footer_content">
+        <div class = "footer_content content_limitation">
             <p class = "footer_text"><img class = "footer_img" src="assets/icon/copyright_icon.png" alt="copyright icon">2025 Burger House</p>
             <p class = "footer_text">Imprint</p>
             <p class = "footer_text">Cookie Preferences</p>
         </div>
     </footer>
-    
+    <section class = "bottom_menu">
+        <img class = "bottom_menu_icon" src="assets/icon/home_icon.png" alt="">
+        <img class = "bottom_menu_icon" src="assets/icon/person_icon.png" alt="">
+        <img class = "bottom_menu_icon" src="assets/icon/header_menu.png" alt="">
+        <button id = "bottom_menu_basket_button" onclick = "toggleBasketVisibility()">
+            <img class = "bottom_menu_icon"src="assets/icon/shopping_cart_icon.png" alt="">
+        </button>
+    </section>
 </body>
 </html>

@@ -147,3 +147,13 @@ function openPurchaseConfirmDialog(){
 function closePurchaseConfirmDialog(){
     document.getElementById("dialog_purchase_confirmed").close();
 };
+
+function toggleBasketVisibility(){
+    if(basketVisible){
+        document.getElementById("basket").classList.remove("dNone");
+        basketVisible = false;
+    }else{
+        document.getElementById("basket").classList.add("dNone");
+        basketVisible = true;
+    };
+};
