@@ -3,6 +3,7 @@ function renderElements(){
     renderElementsFromCategory("burger_and_sandwiches_content");
     renderElementsFromCategory("pizza_content");
     renderElementsFromCategory("salad_content");
+    renderDefaultBasket();
 };
 
 function setIds(){
@@ -20,10 +21,14 @@ function renderElementsFromCategory(category){
 };
 
 function reRenderBasket(id){
-    setInDishesJSON("amount", 1, findJSONIndexById(id));
-    document.getElementById("basket_content").innerHTML = "";
-    for(let i =0; i <basketArray.length; i++){
-        createElementInBasket(basketArray[i], findJSONIndexById(basketArray[i]));
+    if(basketArray.length == 0){
+        
+    }else{
+        setInDishesJSON("amount", 1, findJSONIndexById(id));
+        document.getElementById("basket_content").innerHTML = "";
+        for(let i =0; i <basketArray.length; i++){
+            createElementInBasket(basketArray[i], findJSONIndexById(basketArray[i]));
+        };
     };
 };
 
@@ -42,17 +47,23 @@ function refreshElementInBasket(indexJSON){
     refreshPriceCalculation();
 };
 
-function refreshPriceCalculation(){
-    let value = 0;
-    let priceInCent = 0;
-    for (let i = 0; i< basketArray.length; i++){
-        let indexJSON = findJSONIndexById(basketArray[i]);
-        priceInCent += getPriceInCent(getFromDishesJSON("price", indexJSON)) * getFromDishesJSON("amount", indexJSON);
+function refreshPriceCalculation(bool){
+    if(basketArray.length === 0){
+        document.getElementById("subtotal_amount").innerHTML = "";
+        document.getElementById("total_price").innerHTML = "";
+        document.getElementById(`basket_order_button_price`).innerHTML = "";
+    }else{
+        let value = 0;
+        let priceInCent = 0;
+        for (let i = 0; i< basketArray.length; i++){
+            let indexJSON = findJSONIndexById(basketArray[i]);
+            priceInCent += getPriceInCent(getFromDishesJSON("price", indexJSON)) * getFromDishesJSON("amount", indexJSON);
+        };
+        document.getElementById("subtotal_amount").innerHTML = `${calculateEuro(priceInCent, parseInt(0))},${calculateCents(priceInCent, parseInt(0))}€`;
+        priceInCent = priceInCent + getPriceInCent([4,99]);
+        document.getElementById("total_price").innerHTML = `${calculateEuro(priceInCent, parseInt(0))},${calculateCents(priceInCent, parseInt(0))}€`;
+        document.getElementById(`basket_order_button_price`).innerHTML = ` ${calculateEuro(priceInCent, parseInt(0))},${calculateCents(priceInCent, parseInt(0))}`;
     };
-    document.getElementById("subtotal_amount").innerHTML = `${calculateEuro(priceInCent, parseInt(0))},${calculateCents(priceInCent, parseInt(0))}€`;
-    priceInCent = priceInCent + getPriceInCent([4,99])
-    document.getElementById("total_price").innerHTML = `${calculateEuro(priceInCent, parseInt(0))},${calculateCents(priceInCent, parseInt(0))}€`;
-    document.getElementById(`basket_order_button_price`).innerHTML = ` ${calculateEuro(priceInCent, parseInt(0))},${calculateCents(priceInCent, parseInt(0))}`;
 };
 
 function getPriceInCent(price){
@@ -68,20 +79,38 @@ function calculateCents(priceInCent, deliveryFeeInCents){
 };
 
 function buyBasket(){
-    removeAllElementsFromBasket();
+    if(basketArray.length === 0){
+    }else{
+        removeAllElementsFromBasket();
     refreshPriceCalculation();
     openPurchaseConfirmDialog();
+    renderDefaultBasket();
+    };
 };
 
 function addToBasket(indexJSON, id){
-    
-    if(isInBasket(indexJSON)){
-        setInDishesJSON("amount", getFromDishesJSON("amount", indexJSON) + 1, indexJSON);
-        refreshElementInBasket(indexJSON);
+    if(basketArray.length === 0){
+        document.getElementById("basket_content").innerHTML = "";
+        document.getElementById("price_and_delivery_table").classList.remove("color_dark");
+        document.getElementById("basket_total").classList.remove("color_dark");
+        document.getElementById("basket_price_bar").classList.remove("color_dark");
+        if(isInBasket(indexJSON)){
+            setInDishesJSON("amount", getFromDishesJSON("amount", indexJSON) + 1, indexJSON);
+            refreshElementInBasket(indexJSON);
+        }else{
+            basketArray.push(getFromDishesJSON("id", indexJSON));
+            createElementInBasket(id, findJSONIndexById(id));
+        };
     }else{
-        basketArray.push(getFromDishesJSON("id", indexJSON));
-        createElementInBasket(id, findJSONIndexById(id));
-    };
+        if(isInBasket(indexJSON)){
+            setInDishesJSON("amount", getFromDishesJSON("amount", indexJSON) + 1, indexJSON);
+            refreshElementInBasket(indexJSON);
+        }else{
+            basketArray.push(getFromDishesJSON("id", indexJSON));
+            createElementInBasket(id, findJSONIndexById(id));
+        };
+    }
+    
 };
 
 function addToElementInBasket(indexJSON){
@@ -110,9 +139,14 @@ function removerAllElementsFromBasket(){
 };
 
 function removeElementFromBasket(id){
-    let indexArray = basketArray.indexOf(id);
-    basketArray.splice(indexArray, 1);
-    reRenderBasket(id);
+    if(basketArray >= 1){
+        removeAllElementsFromBasket();
+        renderDefaultBasket();
+    }else{
+        let indexArray = basketArray.indexOf(id);
+        basketArray.splice(indexArray, 1);
+        reRenderBasket(id);
+    };
 };
 
 function setDnoneStates(indexJSON){
@@ -149,11 +183,34 @@ function closePurchaseConfirmDialog(){
 };
 
 function toggleBasketVisibility(){
-    if(basketVisible){
-        document.getElementById("basket").classList.remove("dNone");
-        basketVisible = false;
+    if(mobileBasketVisible){
+        document.getElementById("basket_wrapper").classList.add("dNone");
+        mobileBasketVisible = false;
     }else{
-        document.getElementById("basket").classList.add("dNone");
-        basketVisible = true;
+        document.getElementById("basket_wrapper").classList.remove("dNone");
+        mobileBasketVisible = true;
+    }
+};
+
+function openMobileBasket(){
+
+    if(mobileBasketVisible){
+        document.getElementById("mobile_basket_dialog").close();
+        mobileBasketVisible = false;
+    }else{
+        document.getElementById("mobile_basket_dialog").showModal();
+        mobileBasketVisible = true;
     };
+};
+
+function setMobileBasket(){
+    document.getElementById("mobile_basket_dialog")
+};
+
+function renderDefaultBasket(){
+    document.getElementById("basket_content").innerHTML = defaultBasketTemplate();
+    document.getElementById("price_and_delivery_table").classList.add("color_dark");
+    document.getElementById("basket_total").classList.add("color_dark");
+    document.getElementById("basket_price_bar").classList.add("color_dark");
+    
 };

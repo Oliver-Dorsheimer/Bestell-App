@@ -100,12 +100,13 @@
                     <p class = "dialog_title_undertext">Your food is on the way!</p>
                 </div>
             </dialog>
-            <section class = "basket_wrapper">
+            <div id = "default_basket"></div>
+            <section id = "basket_wrapper" class = "basket_wrapper">
         <div id = "basket" class = "basket_class">
             <h3>Your Basket</h3>
             <div id = "basket_content"></div>
-            <section class = "basket_section_prices">
-                 <table class = "price_and_delivery_table">
+            <section id="basket_section_prices" class = "basket_section_prices">
+                 <table id = "price_and_delivery_table" class = "price_and_delivery_table">
                 <tr class = "price_and_delivery__tr">
                     <td>Subtotal</td>
                     <td id = "subtotal_amount"></td>
@@ -115,8 +116,8 @@
                     <td id = "delivery_fee">4,99€</td>
                 </tr>
                 </table>
-                <div class = "basket_price_bar"></div>
-                <div class = "basket_total">
+                <div id = "basket_price_bar" class = "basket_price_bar"></div>
+                <div id = "basket_total" class = "basket_total">
                     <p>Total</p>
                     <p id = "total_price">4,99€</p>
                 </div>

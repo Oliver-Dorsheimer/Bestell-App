@@ -44,3 +44,12 @@ function basketContentTemplate(id, indexJSON){
 function basketTitleTemplate(indexJSON){
     return `${getFromDishesJSON("amount", indexJSON)} x <span>${getFromDishesJSON("name", indexJSON)}</span>`
 };
+
+function defaultBasketTemplate() {
+  return `
+    <div id="default_basket">
+        <p class = "default_basket_text">empty :(</p>
+        <img class = "default_basket_icon" src="assets/icon/shopping_cart_icon.png">
+    </div>
+`;
+}

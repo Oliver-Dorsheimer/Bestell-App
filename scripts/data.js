@@ -204,4 +204,4 @@ function setInDishesJSON(variableToSet, value, index){
 
 let basketArray = [];
 
-let basketVisible = false;
+let mobileBasketVisible = true;
