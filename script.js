@@ -82,9 +82,9 @@ function buyBasket(){
     if(basketArray.length === 0){
     }else{
         removeAllElementsFromBasket();
-    refreshPriceCalculation();
-    openPurchaseConfirmDialog();
-    renderDefaultBasket();
+        refreshPriceCalculation();
+        openPurchaseConfirmDialog();
+        renderDefaultBasket();
     };
 };
 
