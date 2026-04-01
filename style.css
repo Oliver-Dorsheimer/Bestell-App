@@ -339,12 +339,19 @@ footer {
 .footer_text{
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 8px;
     flex: 1;
 
     font-family: "palanquin";
     color: var(--color-primary-text);
     font-size: 18px;
     font-weight: 400;
+}
+
+.footer_img{
+    height: 32px;
+    width: 32px;
 }
 
 
@@ -398,14 +405,9 @@ footer {
     }
 }
 
-@media(max-width:1180px){
+@media(max-width:1050px){
 
-    .dish_card{
-        width: 550px;
-    }
-}
-
-@media(max-width:920px){
+    
 
     .category_header{
         height: 50px;
@@ -422,7 +424,6 @@ footer {
 
     .dish_card{
         flex-direction: column;
-        width: 350px;
         padding: 16px;
     }
 
@@ -433,11 +434,11 @@ footer {
 
     .dish_price_and_order{
         flex-direction: row;
-        width: 100%;
+        width: 70%;
     }
 }
 
-@media(min-width:730px){
+@media(min-width:770px){
 
     .bottom_menu{
         display: none;
@@ -445,10 +446,10 @@ footer {
 
 }
 
-@media(max-width:420px){
+@media(max-width:520px){
 
     .dish_card{
-        width: 220px;
+        width: 200px;
     }
 
     .dish_img{
@@ -457,7 +458,7 @@ footer {
     }
 
     .footer_img{
-        height: 32px;
-        width: 32px;
+        height: 24px;
+        width: 24px;
     }
 }

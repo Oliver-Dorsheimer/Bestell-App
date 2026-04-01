@@ -81,6 +81,7 @@ function calculateCents(priceInCent, deliveryFeeInCents){
 function buyBasket(){
     if(basketArray.length === 0){
     }else{
+        document.getElementById("basket_order_button").classList.add("dNone");
         removeAllElementsFromBasket();
         refreshPriceCalculation();
         openPurchaseConfirmDialog();
@@ -94,6 +95,7 @@ function addToBasket(indexJSON, id){
         document.getElementById("price_and_delivery_table").classList.remove("color_dark");
         document.getElementById("basket_total").classList.remove("color_dark");
         document.getElementById("basket_price_bar").classList.remove("color_dark");
+        document.getElementById("basket_order_button").classList.remove("dNone");
         if(isInBasket(indexJSON)){
             setInDishesJSON("amount", getFromDishesJSON("amount", indexJSON) + 1, indexJSON);
             refreshElementInBasket(indexJSON);
